@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MailReader.Domain/MailReader.Domain.csproj" />
+    <Project Path="src/MailReader.Application/MailReader.Application.csproj" />
+    <Project Path="src/MailReader.Infrastructure/MailReader.Infrastructure.csproj" />
+    <Project Path="src/MailReader.Api/MailReader.Api.csproj" />
+    <Project Path="src/MailReader.Worker/MailReader.Worker.csproj" />
+    <Project Path="src/MailReader.AppHost/MailReader.AppHost.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\MailReader.Application\MailReader.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="WolverineFx" />
+    <PackageReference Include="WolverineFx.Kafka" />
+    <PackageReference Include="Hangfire.Core" />
+  </ItemGroup>
+
+</Project>

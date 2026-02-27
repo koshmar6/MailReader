@@ -1,0 +1,19 @@
+﻿<Project Sdk="Aspire.AppHost.Sdk/13.1.1">
+
+  <PropertyGroup>
+	  <OutputType>Exe</OutputType>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>ed8a6fb2-2413-4cf0-820d-c301adbfbe38</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MailReader.Api\MailReader.Api.csproj" />
+    <ProjectReference Include="..\MailReader.Worker\MailReader.Worker.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" />
+    <PackageReference Include="Aspire.Hosting.Kafka" />
+  </ItemGroup>
+
+</Project>
