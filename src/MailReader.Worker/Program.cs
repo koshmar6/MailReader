@@ -48,9 +48,6 @@ builder.UseWolverine(opts =>
 
 var app = builder.Build();
 
-// ── Применяем миграции БД ──────────────────────────────────────
-await app.Services.MigrateDatabaseAsync();
-
 // ── Регистрируем рекуррентную джобу ───────────────────────────
 using (var scope = app.Services.CreateScope())
 {
