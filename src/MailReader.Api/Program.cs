@@ -1,6 +1,7 @@
 using MailReader.Api.Endpoints;
 using MailReader.Application;
 using MailReader.Infrastructure;
+using Scalar.AspNetCore;
 using Wolverine;
 using Wolverine.Kafka;
 
@@ -14,8 +15,8 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(AssemblyMarker).Assembly));
 
-// ── Swagger ────────────────────────────────────────────────────
-builder.Services.AddEndpointsApiExplorer();
+// ── OpenAPI ────────────────────────────────────────────────────
+builder.Services.AddOpenApi();
 
 // ── Wolverine (только для публикации если нужно из API) ────────
 builder.UseWolverine(opts =>
@@ -26,6 +27,10 @@ builder.UseWolverine(opts =>
 });
 
 var app = builder.Build();
+
+// ── Scalar UI ──────────────────────────────────────────────────
+app.MapOpenApi();
+app.MapScalarApiReference();
 
 // ── Endpoints ──────────────────────────────────────────────────
 app.MapMailboxEndpoints();

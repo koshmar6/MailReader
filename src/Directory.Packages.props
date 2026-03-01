@@ -13,6 +13,7 @@
     <!-- IMAP -->
     <PackageVersion Include="MailKit" Version="4.8.0" />
     <!-- Wolverine -->
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.12.50" />
     <PackageVersion Include="WolverineFx" Version="5.16.4" />
     <PackageVersion Include="WolverineFx.Kafka" Version="5.16.4" />
     <!-- Hangfire -->
