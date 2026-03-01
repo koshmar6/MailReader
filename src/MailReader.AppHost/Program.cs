@@ -17,7 +17,8 @@ var kafka = builder.AddKafka("kafka")
 
 // -- Migrations
 var migrations = builder.AddProject<MailReader_Migrations>("migrations")
-    .WithReference(database);
+    .WithReference(database)
+    .WaitFor(database);
 
 // ── API ────────────────────────────────────────────────────────
 var api = builder.AddProject<MailReader_Api>("api")

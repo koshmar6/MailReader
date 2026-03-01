@@ -1,3 +1,5 @@
+using Hangfire;
+using Hangfire.PostgreSql;
 using MailReader.Api.Endpoints;
 using MailReader.Application;
 using MailReader.Infrastructure;
@@ -26,7 +28,15 @@ builder.UseWolverine(opts =>
     opts.UseKafka(kafkaBootstrapServers);
 });
 
+// ── Hangfire ───────────────────────────────────────────────────
+builder.Services.AddHangfire(config => config
+    .UsePostgreSqlStorage(c =>
+        c.UseNpgsqlConnection(builder.Configuration.GetConnectionString("mailreader"))));
+
 var app = builder.Build();
+
+// ── Hangfire Dashboard ─────────────────────────────────────────
+app.UseHangfireDashboard();
 
 // ── Scalar UI ──────────────────────────────────────────────────
 app.MapOpenApi();
